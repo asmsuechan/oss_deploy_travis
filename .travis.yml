@@ -13,7 +13,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-  - ossutil cp dist/ oss://test-cli --recursive -i $ACCESS_KEY_ID -k $ACCESS_KEY_SECRET -e oss-cn-shanghai.aliyuncs.com
+  - ossutil cp dist/ oss://test-cli --recursive -f -i $ACCESS_KEY_ID -k $ACCESS_KEY_SECRET -e oss-cn-shanghai.aliyuncs.com
 env:
   global:
   - secure: qEjBMfJ5NLNN8dNDGetvi1C8/QCTOfmukY9RGCsOpMlaHUZVdFCAMBtmbuHMcRqJSyu/fBEOL2Nj1dy66EYOFWNdy6Nit7urvjn6ch0RLbdsVC/suuIZv4ROtnYRMIORvvyvtLw7C3pt19bYeKY/iGuP9UizCuu+Q2nz0yoYDWg7HT+PPuYtCwZBFUe8OhQppQNdJw4/WdLr8nAPAP0slR0gIt6Vr54KjRjLPldIuKgsQVahNNaZdgGJ6LBBJuk1C7xfywOF04VfpKzE+3DlFt8Z7e8eP69+fJ5KUl+8RRM5OOeqDdElNeUm0yfnyvUfeMlRj8U9jVja5bdIXqtIIXpngxAM9JrwPhrnh4m1+DYtsPAyk7SiOGeBkBxLJdxvcHyMepxWOgXkNl1kqY6COGWLrtrTN7ljPWxDcZcgIRPumFxddnI0qgYCB6kG4bJHpOsO0CbaqlGggFmt0S03HW2GBX+ccZK/4bCZ83teoeANuvkONVwqRfiUgdmxJtSnr1lSsklpcu90fs2lDmXmbYfgyfbtPME02/pTRSVYE1LrWSzZKDBlAmoDUfsv9Xc6J0/Q5rzSMFV73835tbAR95zvUwiCYcGWvx/c+yvzcRO7eAVQoJr4Itpm06uQGXi96NeNR9ROChM3/GNs71llV8qtuO5VW83iRfLn2JrZZbU=
