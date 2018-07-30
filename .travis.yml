@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- 7
+go:
+- 1.9.x
+install:
+- yarn
+script:
+- yarn run build
+before_deploy:
+- go get github.com/aliyun/ossutil
+deploy:
+  skip_cleanup: true
+  script:
+  - ossutil cp dist/ oss://test-cli --recursive -i $ACCESS_KEY_ID -k $ACCESS_KEY_SECRET -e oss-cn-shanghai.aliyuncs.com
+env:
+  global:
+  - secure: qEjBMfJ5NLNN8dNDGetvi1C8/QCTOfmukY9RGCsOpMlaHUZVdFCAMBtmbuHMcRqJSyu/fBEOL2Nj1dy66EYOFWNdy6Nit7urvjn6ch0RLbdsVC/suuIZv4ROtnYRMIORvvyvtLw7C3pt19bYeKY/iGuP9UizCuu+Q2nz0yoYDWg7HT+PPuYtCwZBFUe8OhQppQNdJw4/WdLr8nAPAP0slR0gIt6Vr54KjRjLPldIuKgsQVahNNaZdgGJ6LBBJuk1C7xfywOF04VfpKzE+3DlFt8Z7e8eP69+fJ5KUl+8RRM5OOeqDdElNeUm0yfnyvUfeMlRj8U9jVja5bdIXqtIIXpngxAM9JrwPhrnh4m1+DYtsPAyk7SiOGeBkBxLJdxvcHyMepxWOgXkNl1kqY6COGWLrtrTN7ljPWxDcZcgIRPumFxddnI0qgYCB6kG4bJHpOsO0CbaqlGggFmt0S03HW2GBX+ccZK/4bCZ83teoeANuvkONVwqRfiUgdmxJtSnr1lSsklpcu90fs2lDmXmbYfgyfbtPME02/pTRSVYE1LrWSzZKDBlAmoDUfsv9Xc6J0/Q5rzSMFV73835tbAR95zvUwiCYcGWvx/c+yvzcRO7eAVQoJr4Itpm06uQGXi96NeNR9ROChM3/GNs71llV8qtuO5VW83iRfLn2JrZZbU=
+  - secure: rWQ+Jen7PQBT69x0Vqu4sZqZY/PbxXFe7+gyQcSDpEFCzZPdPzPDra599G8ft4cxs6FnqXINH88gF++cW1K51o4CU6zRPEML556rPBjATtn7Dy2utoWurWU4JKZZTwTgKkCOgSG/geKRZnq7qUw5dGQIn8ULIrWfqRG5CGljzLk1WqdYgc6jI1vuZLaXcsnyIdLqv5IVKpNM6KDlLmYhZaX8U9A/YFwtCTbEHo7fBlhV2S0bAi6qnMhsWozxY6ATX5pkZtX8RQaZATku25dyNV4cvX6Y9+GLj/9zB6BWtbcbfWU/6sWVbzwpXpo/kMtWpqYsMiT9mIEzAyNPyIhdi1mGo28w/jKh7rkNGqHjdYfgouINK7VCmTbV+hJVVlT7RmWf1YwXIofl3X89QE3/H83LxrToL/ze6qEBBZ+G4rTTcEzxJqqC4rggLOOmB4OYjhaMe1i0RgLtD3jlIMAsvxLbzV9kBdeMLHPpeq8hK2ClVomt8uXT7qadR+WwqPxexl0g/+mEpdCyXPv1nvA9iHh1l5IPDQvpnE7lTlEiplMuy9E3p/Ywq3Di3Xr/yhgUJZgGalwMD/0750XQapAldg0bV1UVsZLJsl3snVZhTedYOKI4+9w/irTtk+ET04VhuCVASWuAVBztfaWF0olh0YxCLwDZsxJhbDtB7Ni/8Q0=
