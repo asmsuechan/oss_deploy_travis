@@ -10,6 +10,7 @@ script:
 before_deploy:
 - go get github.com/aliyun/ossutil
 deploy:
+  provider: script
   skip_cleanup: true
   script:
   - ossutil cp dist/ oss://test-cli --recursive -i $ACCESS_KEY_ID -k $ACCESS_KEY_SECRET -e oss-cn-shanghai.aliyuncs.com
