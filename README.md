@@ -1,2 +1,2 @@
 # oss_deploy_travis
-Upload the built Vue.js project at `dist/` from travis ci. Check .travis.yml for detail.
+Upload the built Vue.js project at `dist/` to Aliyun OSS from travis ci. Check .travis.yml for detail.
